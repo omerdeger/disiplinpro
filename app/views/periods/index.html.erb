@@ -1,0 +1,63 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-fingerprint"></i>
+    Last Periods
+  </div>
+  <% if @periods.any? %>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Manager</th>
+            <th scope="col">Chairman</th>
+            <th scope="col">Member 1</th>
+            <th scope="col">Member 2</th>
+            <th scope="col">Member 3</th>
+            <th scope="col">Member 4</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @periods.each do |period| %>
+          <tr>
+            <th scope="row"><%= period.id %></th>
+            <td><%= period.manager %></td>
+            <td><%= period.chairman %></td>
+            <td><%= period.member1 %></td>
+            <td><%= period.member2 %></td>
+            <td><%= period.member3 %></td>
+            <td><%= period.member4 %></td>
+            <td>
+              <span class"icon">
+                <%= link_to edit_period_path(period) do %>
+                  <i class="far fa-edit"></i>
+                <% end %>
+              </span>
+              <span class"icon">
+                <%= link_to period_path(period), method: :delete, data: { confirm: 'Are you sure?'} do %>
+                  <i class="far fa-trash-alt"></i>
+                <% end %>
+              </span> 
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <section class="hero is-warning ">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Herhangi bir giriş bulunamadı
+          </h1>
+          <h2 class="subtitle">
+            Yeni olay ekleyiniz
+          </h2>
+        </div>
+      </div>
+    </section>
+  <% end %>
+</div>
+<%= link_to 'New', new_period_path, class: 'btn btn-primary'%>

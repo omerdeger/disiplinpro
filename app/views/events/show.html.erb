@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-7 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Basic form</h4>
+        <div class="row">
+          <h2 class="col"><%= @event.title %></h2>
+          <div class="col text-right">
+            <%= link_to edit_event_path(@event), class:"btn btn-light btn-icons btn-rounded" do %>
+              <i class="mdi mdi-pencil"></i>
+            <% end %>
+          </div>
+        </div>
+        <p><%= @event.description %></p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="col-md-5 grid-margin">
+    <div class="card">
+      <div class="card-body">
+      <h4 class="card-title">Öğrenciler</h4>
+        <div id="profile-list-left" class="py-2">
+          <% @event.students.each do |student| %>
+            <div class="card rounded mb-2">
+              <div class="card-body p-3">
+                <div class="media">
+                  <img src="https://i1.wp.com/grueneroadpharmacy.com/wp-content/uploads/2017/02/user-placeholder-1.jpg" alt="image" class="img-sm mr-3 rounded-circle">
+                  <div class="media-body">
+                    <h6 class="mb-1"><%= link_to student.full_name, student, style:'text-decoration: none;' %></h6>
+                    <p class="mb-0 text-muted"> <%= student.id_number %> </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  

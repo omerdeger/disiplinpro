@@ -1,0 +1,71 @@
+<section class="sheet padding-25mm">
+  <!-- Write HTML just like a web page -->
+  <article>
+    <div class="m-1cm d-flex">
+      <div class="font-weight-bold">
+          SAYI:&nbsp;&nbsp;&nbsp; <tab class="font-weight-light"><%= @event.updated_at %></tab></l><br>
+          <l class="font-weight-bold">KONU: <tab class="font-weight-light">Disiplin Kurulu Toplantısı</tab></l>
+      </div>
+      <div>
+          <p class="text-right font-weight-light"><%= @event.created_at.strftime('%d.%m.%Y') %></p>
+      </div>
+    </div>
+    <h4 class="m-3cm text-center font-weight-bold">
+      ÖDÜL VE DİSİPLİN KURULU ÜYELERİNE
+    </h4>
+    <p class="m-1cm text-justify">
+      &emsp;&emsp;#TARİH - GÜN EKLENECEK# saat #SAAT EKLENECEK#'de #TOPLANTI YERİ#nde aşağıdaki gündem maddelerini görüşmek üzere Ödül ve Disiplin
+      Kurulu toplantısı yapılacaktır. Ödül ve Disiplin Kurulunda görevli arkadaşların belirtilen gün ve saatte hazır bulunmaları gerekmektedir.
+    </p>
+    <p>
+      &emsp;&emsp;Bilgilerinizi ve gereğini rica ederim.
+    </p>
+    <div class="imza d-flex justify-content-between">
+      <div class="text-center font-weight-bold">
+          <%= @event.period.chairman %>
+          <p class="font-weight-normal">Ödül ve Disiplin Kurulu Başkanı <br> Müdür Yardımcısı</p>
+      </div>
+      <div class="text-center font-weight-bold">
+          <%= @event.period.manager %>
+          <p class="font-weight-normal">Okul Müdürü</p>
+      </div>
+    </div>
+    <div>
+      <p class="m-2cm font-weight-bold">
+        Gündem
+        <ol class="font-weight-normal" style="margin:0">
+          <li class="print">Açılış ve Yoklama</li>
+          <li class="print">Okul Ödl ve Disiplin Kuruluna gelen dosyaların görüşülmesi</li>
+          <li class="print">Dilek ve Temenniler</li>
+          <li class="print">Kapanış</li>
+        </ol>
+      </p>
+    </div>
+    <div class="m-2cm d-flex justify-content-between">
+      <div class="font-weight-bold">
+          Üyeler
+          <div class="mt-3 font-weight-normal"><%= @event.period.member1 %></div>
+          <div class="mt-3 font-weight-normal"><%= @event.period.member2 %></div>
+          <div class="mt-3 font-weight-normal"><%= @event.period.member3 %></div>
+          <div class="mt-3 font-weight-normal"><%= @event.period.member4 %></div>
+      </div>
+      <div class="font-weight-bold mr-15cm">
+          İmza
+          <div class="mt-3 font-weight-normal">...............................</div>
+          <div class="mt-3 font-weight-normal">...............................</div>
+          <div class="mt-3 font-weight-normal">...............................</div>
+          <div class="mt-3 font-weight-normal">...............................</div>
+      </div>
+    </div>
+    <footer class="fixed-bottom">
+      <div class="container">
+        <hr>
+        <div class="align-middle text-center">
+          <span>Copyright © Disiplin Pro 2018</span>
+        </div>
+      </div>
+    </footer>
+
+  </article>
+
+</section>

@@ -1,0 +1,132 @@
+<!-- Top Counter -->
+<div class="row">
+  <div class="col-12 grid-margin">
+    <div class="card card-statistics">
+      <div class="row">
+        <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+              <i class="mdi mdi-account-multiple-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+              <div class="wrapper text-center text-sm-left">
+                <p class="card-text mb-0">Students</p>
+                <div class="fluid-container">
+                  <h3 class="mb-0 font-weight-medium"><%= Student.all.count %></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+              <i class="mdi mdi-checkbox-marked-circle-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+              <div class="wrapper text-center text-sm-left">
+                <p class="card-text mb-0">Events</p>
+                <div class="fluid-container">
+                  <h3 class="mb-0 font-weight-medium"><%= @events.count %></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+              <i class="mdi mdi-trophy-outline text-primary mr-0 mr-sm-4 icon-lg"></i>
+              <div class="wrapper text-center text-sm-left">
+                <p class="card-text mb-0">Rules</p>
+                <div class="fluid-container">
+                  <h3 class="mb-0 font-weight-medium"><%= Rule.all.count %></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+              <i class="mdi mdi-target text-primary mr-0 mr-sm-4 icon-lg"></i>
+              <div class="wrapper text-center text-sm-left">
+                <p class="card-text mb-0">Total Sales</p>
+                <div class="fluid-container">
+                  <h3 class="mb-0 font-weight-medium">61,119</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END Top Counter -->
+
+
+<div class="row">
+  <div class="col-lg-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="cad-title">Son Olaylar</h4>
+        <% if @events.any? %>
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Descriprion</th>
+                  <th scope="col">Law</th>
+                  <th scope="col">Students</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @events.each do |event| %>
+                <tr>
+                  <th scope="row"><%= event.id %></th>
+                  <td><%= link_to truncate(event.title, length: 15 ), event_path(event) %></td>
+                  <td><%= truncate(event.description, length: 30) %></td>
+                  <td><%= link_to event.rule.item_number, rule_path(event.rule_id) %></td>
+                  <td>
+                    <% event.students.each do |s| %>
+                      <%= link_to s.name, student_path(s.id) %>
+                    <% end %>
+                  </td>
+                  <td>
+                    <span class"icon">
+                      <%= link_to edit_event_path(event), style:"text-decoration: none" do %>
+                        <i class="mdi mdi- mdi-pencil"></i>
+                      <% end %>
+                    </span>
+                    <span class"icon">
+                      <%= link_to event_path(event), method: :delete, data: { confirm: 'Are you sure?'}, style:"text-decoration: none" do %>
+                        <i class="mdi mdi-delete"></i>
+                      <% end %>
+                    </span> 
+                    <span class"icon">
+                      <%= link_to event_invitation_path(event), target:'_blank', style:"text-decoration: none" do %>
+                        <i class="mdi mdi-printer"></i>
+                      <% end %>
+                    </span> 
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        <% else %>
+          <div class="card-body">
+            <blockquote class="blockquote blockquote-danger">
+              <p>Herhangi bir olay bulunamadı.</p>
+              <footer class="blockquote-footer">Yeni bir tane eklemek için
+                <cite title="Source Title"><%= link_to "tıklayınız", new_event_path, style:"text-decoration:none;" %></cite>
+              </footer>
+            </blockquote>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to 'New', new_event_path, class: 'btn btn-primary'%>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school_name: MyString
+  manager: MyString
+  chairman: MyString
+  member1: MyString
+  member2: MyString
+  member3: MyString
+  member4: MyString
+
+two:
+  school_name: MyString
+  manager: MyString
+  chairman: MyString
+  member1: MyString
+  member2: MyString
+  member3: MyString
+  member4: MyString

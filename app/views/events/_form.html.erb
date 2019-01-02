@@ -1,0 +1,19 @@
+<%= simple_form_for @event do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.association :rule, label_method: :item_number, value_method: :id %>
+  <%= f.association :period, label_method: :school_name, value_method: :id %>
+  <%= f.association :students, label_method: :full_name, value_method: :id %>
+
+  <div class="form-group row mb-0">
+    <%= f.button :submit, class: "btn-primary" %>
+    <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+  </div>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+    $('#event_student_ids').select2();
+  });
+</script>

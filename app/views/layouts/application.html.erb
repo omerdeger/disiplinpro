@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Disiplin Pro</title>
+    
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- Custom relation -->
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/3.2.89/css/materialdesignicons.min.css">    
+    
+    <!-- Select2.js files -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      
+      <%= render 'partials/navbar' %>
+      <!-- NAVBAR -->
+      
+      <!-- partial -->
+      <div class="container-fluids page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        
+         <%= render 'partials/sidebar' %>  
+        <!-- SİDEBAR -->
+          
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <%= render 'partials/notification' %>
+            <%= yield %>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:../../partials/_footer.html -->
+        
+           <%= render 'partials/footer' %>
+          <!-- FOOTER -->
+        
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+  </body>
+
+</html>
+
+
+

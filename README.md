@@ -1,24 +1,31 @@
-# README
+# <img src="/app/assets/images/logos/disiplinpro.svg" alt="OpenZeppelin" width="400px">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**DisiplinPRO Ortaöğretim Ödül ve Disiplin Kurulu işlemlerini kolaylaştırmak üzere geliştrilmiş web tabanlı bir uygulamadır.** 
+Olayları, öğrencileri ve kuralları kaydederek yönetebilirsiniz.
 
-Things you may want to cover:
+## Yükleme
 
-* Ruby version
+```
+rails db:migrate
+rails server
+```
 
-* System dependencies
+## Kullanım
 
-* Configuration
+Uygulama sisteme yüklendikten sonra sqlite3 ile verileri kaydetmektedir.
+Uygun komutlar verildikten sonra tarayınızdan localhost:3000 veya 127.0.0.1:3000 portuna ulaşarak uygulamaya erişebilirsiniz
 
-* Database creation
+## Güvenlik
 
-* Database initialization
+Bu uygulama Ömer DEĞER tarafından geliştirilmektedir. Doğabilecek her türlü veri kaybı ve güvenlik açığından sorumlu değildir.
 
-* How to run the test suite
+## Contribute
 
-* Services (job queues, cache servers, search engines, etc.)
+disiplinPRO katkılara açıktır. Katkı yapmak için [contribution guide]
 
-* Deployment instructions
+## License
 
-* ...
+disiplinPRO is released under the [MIT License](LICENSE).
+
+
+[contribution guide]: CONTRIBUTING.md

@@ -17,7 +17,7 @@ Uygun komutlar verildikten sonra tarayınızdan localhost:3000 veya 127.0.0.1:30
 
 ## Güvenlik
 
-Bu uygulama Ömer DEĞER tarafından geliştirilmektedir. Doğabilecek her türlü veri kaybı ve güvenlik açığından sorumlu değildir.
+Bu uygulama gönüllüler tarafından geliştirilmektedir. Doğabilecek her türlü veri kaybından gönüllüler sorumlu değildir.
 
 ## Contribute
 

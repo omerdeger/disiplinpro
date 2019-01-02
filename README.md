@@ -1,4 +1,4 @@
-# <img src="/app/assets/images/logos/disiplinpro.svg" alt="OpenZeppelin" width="400px">
+# <img src="/app/assets/images/logos/disiplinpro.svg" alt="OpenZeppelin" max-width="%100">
 
 **DisiplinPRO Ortaöğretim Ödül ve Disiplin Kurulu işlemlerini kolaylaştırmak üzere geliştrilmiş web tabanlı bir uygulamadır.** 
 Olayları, öğrencileri ve kuralları kaydederek yönetebilirsiniz.

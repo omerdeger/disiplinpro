@@ -2,7 +2,7 @@
   <%= f.error_notification %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.association :rule, label_method: :item_number, value_method: :id %>
+  <%= f.association :rule, label_method: :rule_snippet, value_method: :id %>
   <%= f.association :period, label_method: :school_name, value_method: :id %>
   <%= f.association :students, label_method: :full_name, value_method: :id %>
 

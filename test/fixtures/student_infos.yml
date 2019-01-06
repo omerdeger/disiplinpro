@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  classroom: 1
+  branch: MyString
+  school_number: 1
+  student_id: 1
+
+two:
+  classroom: 1
+  branch: MyString
+  school_number: 1
+  student_id: 2

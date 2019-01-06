@@ -1,150 +1,36 @@
-<div class="row profile-page">
-  <div class="col-12">
+<div class="row">
+  <div class="col-xl-4">
     <div class="card">
-      <div class="card-body">
-        <div class="profile-header text-white">
-          <div class="d-flex justify-content-around">
-            <div class="profile-info d-flex align-items-center">
-              <%= image_tag("theme/user.jpg", class:'rounded-circle img-lg') %>
-              <div class="wrapper pl-4">
-                <p class="profile-user-name"><%= @student.full_name %></p>
-                <div class="wrapper d-flex align-items-center">
-                  <p class="profile-user-designation"><%= @student.id_number %></p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="card-header">
+        <h3 class="text-center mt-3">
+          Öğrenci Bilgileri
+        </h3>
+      </div>
+      <div class="card-body text-center">
+        <div class="mb-4">
+          <%= image_tag('theme/user.jpg', style:'border-radius: 50%; max-height: 140px;' )%>
         </div>
-        <div class="profile-body">
-          <ul class="nav tab-switch" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="user-profile-info-tab" data-toggle="pill" href="#user-profile-info" role="tab" aria-controls="user-profile-info" aria-selected="true">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="user-profile-activity-tab" data-toggle="pill" href="#user-profile-activity" role="tab" aria-controls="user-profile-activity" aria-selected="false">Events</a>
-            </li>
-          </ul>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="tab-content tab-body" id="profile-log-switch">
-                <div class="tab-pane fade show active pr-3" id="user-profile-info" role="tabpanel" aria-labelledby="user-profile-info-tab">
-                  <table class="table table-borderless w-100 mt-4">
-                    <tbody><tr>
-                      <td>
-                        <strong>Full Name :</strong> <%= @student.full_name %></td>
-                      <td>
-                        <strong>TC Kimlik :</strong> <%= @student.id_number %></td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <strong>Numara :</strong> <%= @student.phone_number %></td>
-                      <td>
-                        <strong>Email :</strong> Richard@staradmin.com</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <strong>Languages :</strong> English, German, Spanish.</td>
-                      <td>
-                        <strong>Phone :</strong> +73646 4563</td>
-                    </tr>
-                  </tbody></table>
-                  <div class="row mt-5 pb-4 border-bottom">
-                    <div class="col-6">
-                      <div class="d-flex align-items-start pb-3 border-bottom">
-                        <img src="../../../assets/images/samples/profile_page/logo/01.png" alt="brand logo">
-                        <div class="wrapper pl-4">
-                          <p class="font-weight-bold mb-0">Photoshop</p>
-                          <small>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</small>
-                        </div>
-                      </div>
-                      <div class="d-flex align-items-start py-3 border-bottom">
-                        <img src="../../../assets/images/samples/profile_page/logo/02.png" alt="brand logo">
-                        <div class="wrapper pl-4">
-                          <p class="font-weight-bold mb-0">Photoshop</p>
-                          <small>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</small>
-                        </div>
-                      </div>
-                      <div class="d-flex align-items-start py-3">
-                        <img src="../../../assets/images/samples/profile_page/logo/03.png" alt="brand logo">
-                        <div class="wrapper pl-4">
-                          <p class="font-weight-bold mb-0">Photoshop</p>
-                          <small>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="row">
-                        <div class="col-12">
-                          <img class="img-fluid rounded" src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/samples/profile_page/banner_01.jpg" alt="banner image"> </div>
-                        <div class="col-12 mt-3">
-                          <img class="img-fluid rounded" src="https://www.bootstrapdash.com/demo/star-admin-pro/src/assets/images/samples/profile_page/banner_02.jpg" alt="banner image"> </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12 mt-5">
-                      <h5 class="mb-5">Stages</h5>
-                      <div class="stage-wrapper pl-4">
-                        <div class="stages border-left pl-5 pb-4">
-                          <div class="btn btn-icons btn-rounded stage-badge btn-inverse-success">
-                            <i class="mdi mdi-texture"></i>
-                          </div>
-                          <div class="d-flex align-items-center mb-2 justify-content-between">
-                            <h5 class="mb-0">Task Added</h5>
-                            <small class="text-muted">28 mins ago</small>
-                          </div>
-                          <p>Admin is a full featured, multipurpose, premium bootstrap admin template built with Bootstrap 4 Framework</p>
-                        </div>
-                        <div class="stages border-left pl-5 pb-4">
-                          <div class="btn btn-icons btn-rounded stage-badge btn-inverse-danger">
-                            <i class="mdi mdi-download"></i>
-                          </div>
-                          <div class="d-flex align-items-center mb-2 justify-content-between">
-                            <h5 class="mb-0">Download Completed</h5>
-                            <small class="text-muted">45 mins ago</small>
-                          </div>
-                          <p>one of the best admin panel templates. With this bootstrap admin template, you can quick start your project.</p>
-                          <div class="file-icon-wrapper">
-                            <div class="btn btn-outline-danger file-icon">
-                              <i class="mdi mdi-file-pdf"></i>
-                            </div>
-                            <div class="btn btn-outline-primary file-icon">
-                              <i class="mdi mdi-file-word"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="stages pl-5 pb-4">
-                          <div class="btn btn-icons btn-rounded stage-badge btn-inverse-primary">
-                            <i class="mdi mdi-checkbox-marked-circle-outline"></i>
-                          </div>
-                          <div class="d-flex align-items-center mb-2 justify-content-between">
-                            <h5 class="mb-0">New Task Completed</h5>
-                            <small class="text-muted">55 mins ago</small>
-                          </div>
-                          <p>Admin dashboard works seamlessly on all major web browsers and devices.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="user-profile-activity" role="tabpanel" aria-labelledby="user-profile-activity-tab">
-                  <% if @student.events.any? %>
-                    <p>
-                      <% @student.events.each do |event| %>
-                        <%= event.title %>
-                      <% end %>
-                    </p>
-                  <% else %>
-                    <p>
-                      Herhangi bir olay bulunamadı.
-                    </p>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="font-weight-bold">
+          <%= @student.full_name %>
         </div>
+        <p style="font-size: 1rem;">
+          <% if @student.student_infos.any? %>
+            <%= @student.student_infos.last.sinif %> | 
+            <%= @student.student_infos.last.school_number %>
+          <% else %>
+            <%= link_to "Öğrenci Bilgileri Ekle", new_student_student_info_path(@student) %>
+          <% end %>      
+        </p>
       </div>
     </div>
+  </div>
+  <div class="col-xl-8">
+    <div class="card">
+      <div class="card-body">
+        <h1 class="title">
+          Öğrenci Bilgileri
+        </h1>
+      </div>
+    </div> 
   </div>
 </div>

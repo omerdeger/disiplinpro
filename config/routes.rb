@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :events do
     get 'invitation'
   end
-  resources :students
+  resources :students do
+    resources :student_infos
+  end
   resources :rules
   resources :periods
   root to: 'events#index'

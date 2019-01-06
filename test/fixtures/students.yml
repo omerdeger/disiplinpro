@@ -3,13 +3,7 @@
 one:
   name: MyString
   surname: MyString
-  id_number: 1
-  phone_number: 1
-  event: one
 
 two:
   name: MyString
   surname: MyString
-  id_number: 1
-  phone_number: 1
-  event: two
